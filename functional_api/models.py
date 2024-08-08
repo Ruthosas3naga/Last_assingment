@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, Text, create_engine
+from sqlalchemy import Column, Integer, String, Text
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+
+Base = declarative_base()
 
 
 class Project(Base):
@@ -24,4 +25,3 @@ class Contact(Base):
     email = Column(String, index=True)
     message = Column(Text)
 
-Base.metadata.create_all(bind=engine)
